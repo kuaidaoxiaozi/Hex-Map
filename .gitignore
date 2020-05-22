@@ -1,2 +1,4 @@
 *.meta
 /Assets/*.meta
+/Temp
+/Library/EditorInstance.json
