@@ -30,6 +30,22 @@ public static class HexMetrics {
         return a;
     }
 
+    public static Color TerraceLerp(Color a, Color b, int step) {
+        float h = step * horizontalTerraceStepSize;
+        return Color.Lerp(a, b, h);
+    }
+
+    public static HexEdgeType GetEdgeType(int elevation1, int elevation2) {
+        if (elevation1 == elevation2) {
+            return HexEdgeType.Flat;
+        }
+        int delta = elevation1 - elevation2;
+        if (delta == 1 || delta == -1) {
+            return HexEdgeType.Slope;
+        }
+        return HexEdgeType.Cliff;
+    }
+
     static Vector3[] corners = {
         new Vector3(0f, 0f, outerRadius),
         new Vector3(innerRadius, 0f, 0.5f * outerRadius),
