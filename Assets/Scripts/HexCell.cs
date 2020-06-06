@@ -4,7 +4,10 @@ public class HexCell : MonoBehaviour {
 
 	public HexCoordinates coordinates;
 
-	Color color;
+	public RectTransform uiRect;
+
+	public HexGridChunk chunk;
+
 	public Color Color {
 		get {
 			return color;
@@ -17,10 +20,6 @@ public class HexCell : MonoBehaviour {
 			Refresh();
 		}
 	}
-
-	public RectTransform uiRect;
-
-	public HexGridChunk chunk;
 
 	public int Elevation {
 		get {
@@ -51,6 +50,8 @@ public class HexCell : MonoBehaviour {
 		}
 	}
 
+	Color color;
+
 	int elevation = int.MinValue;
 
 	[SerializeField]
@@ -77,7 +78,7 @@ public class HexCell : MonoBehaviour {
 		);
 	}
 
-	void Refresh() {
+	void Refresh () {
 		if (chunk) {
 			chunk.Refresh();
 			for (int i = 0; i < neighbors.Length; i++) {

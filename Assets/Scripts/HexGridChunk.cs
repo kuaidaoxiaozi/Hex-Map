@@ -1,42 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class HexGridChunk : MonoBehaviour {
 
-    HexCell[] cells;
+	HexCell[] cells;
 
-    HexMesh hexMesh;
-    Canvas gridCanvas;
+	HexMesh hexMesh;
+	Canvas gridCanvas;
 
+	void Awake () {
+		gridCanvas = GetComponentInChildren<Canvas>();
+		hexMesh = GetComponentInChildren<HexMesh>();
 
-    private void Awake() {
-        hexMesh = GetComponentInChildren<HexMesh>();
-        gridCanvas = GetComponentInChildren<Canvas>();
+		cells = new HexCell[HexMetrics.chunkSizeX * HexMetrics.chunkSizeZ];
+		ShowUI(false);
+	}
 
-        cells = new HexCell[HexMetrics.chunkSizeX * HexMetrics.chunkSizeZ];
-    }
+	public void AddCell (int index, HexCell cell) {
+		cells[index] = cell;
+		cell.chunk = this;
+		cell.transform.SetParent(transform, false);
+		cell.uiRect.SetParent(gridCanvas.transform, false);
+	}
 
-    //void Start() {
-    //    hexMesh.Triangulate(cells);
-    //}
+	public void Refresh () {
+		enabled = true;
+	}
 
-    void LateUpdate() {
-        hexMesh.Triangulate(cells);
-        enabled = false;
-    }
+	public void ShowUI (bool visible) {
+		gridCanvas.gameObject.SetActive(visible);
+	}
 
-    public void AddCell(int index, HexCell cell) {
-        cells[index] = cell;
-        cell.chunk = this;
-        cell.transform.SetParent(transform, false);
-        cell.uiRect.SetParent(gridCanvas.transform, false);
-    }
-
-    public void Refresh() {
-        enabled = true;
-        //hexMesh.Triangulate(cells);
-    }
-
+	void LateUpdate () {
+		hexMesh.Triangulate(cells);
+		enabled = false;
+	}
 }
