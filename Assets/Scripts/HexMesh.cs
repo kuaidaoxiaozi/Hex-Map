@@ -59,7 +59,8 @@ public class HexMesh : MonoBehaviour {
     }
 
     void TriangulateWithRiver(HexDirection direction, HexCell cell, Vector3 center, EdgeVertices e) {
-
+        Vector3 centerL = center + HexMetrics.GetFirstSolidCorner(direction.Previous()) * 0.25f;
+        Vector3 centerR = center + HexMetrics.GetSecondSolidCorner(direction.Next()) * 0.25f;
 
     }
 

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 638, y: 272}
   m_MaxSize: {x: 18008, y: 10022}
   vertical: 0
-  controlID: 80
+  controlID: 58
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_MinSize: {x: 638, y: 372}
   m_MaxSize: {x: 18008, y: 14022}
   vertical: 1
-  controlID: 79
+  controlID: 57
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_MinSize: {x: 1113, y: 372}
   m_MaxSize: {x: 26008, y: 14022}
   vertical: 0
-  controlID: 147
+  controlID: 56
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -389,7 +389,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -432,18 +432,18 @@ MonoBehaviour:
     m_ExpandedIDs: ffffffff00000000c02c0000962d0000a42e0000ee2e000008320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: HexCell
+      m_OriginalName: HexCell
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 10156
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 3}
     m_SearchString: 
@@ -552,9 +552,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 422d0000
+      m_SelectedIDs: ac270000
       m_LastClickedID: 0
-      m_ExpandedIDs: 7af7ffff96f7ffffeaf7ffff06f8ffff76fbffff20310000
+      m_ExpandedIDs: 76fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
